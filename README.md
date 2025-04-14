@@ -62,3 +62,18 @@ npx expo install axios
 
 # AsyncStorage para armazenamento local
 npx expo install @react-native-async-storage/async-storage
+```
+---
+
+## 💾 Como rodar o projeto?
+
+```bash
+# Clone o repositório:
+git clone https://github.com/seu-repositorio/imdb-react_native.git
+
+# Instale as dependências:
+cd imdb-react_native
+npx expo install
+
+# Rode o projeto:
+npx expo start
