@@ -1,5 +1,5 @@
 # IMDB React Native App
-## Desenvolvido por Luiz Felipe Vieira Soares
+### Desenvolvido por Luiz Felipe Vieira Soares
 
 Este é um aplicativo móvel desenvolvido em **React Native**, que permite a interação com a API [OMDb](https://www.omdbapi.com/) para adicionar e gerenciar filmes, além de realizar login e cadastro de usuários. A aplicação inclui funcionalidades para exibir uma lista de filmes em cards, visualizar detalhes do filme, adicionar e excluir filmes, além de gerenciar o estado do usuário.
 
