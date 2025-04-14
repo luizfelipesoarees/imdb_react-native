@@ -77,3 +77,4 @@ npx expo install
 
 # Rode o projeto:
 npx expo start
+
