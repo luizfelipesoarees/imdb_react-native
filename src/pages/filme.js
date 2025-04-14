@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ActivityIndicator } from "react-native";
-import api from "../services/api";
+import api from "../services/api"; 
 import {
   Container,
   Header,
@@ -10,23 +10,25 @@ import {
   InfoBox,
   InfoTitle,
   InfoValue,
-} from "../styles";
+} from "../styles"; 
 import { ScrollView } from "react-native-gesture-handler";
 
+// Componente detalhes do filme
 export default class Filme extends Component {
   state = {
-    loading: true,
-    movieDetails: {},
+    loading: true, 
+    movieDetails: {}, 
   };
 
+  // Busca os dados do filme pela API
   async componentDidMount() {
-    const { movie } = this.props.route.params;
+    const { movie } = this.props.route.params; 
     console.log("Movie", movie);
 
     try {
       const response = await api.get("/", {
         params: {
-          i: movie.imdbID,
+          i: movie.imdbID, 
         },
       });
 
@@ -45,11 +47,12 @@ export default class Filme extends Component {
     if (loading) {
       return (
         <Container style={{ justifyContent: "center", alignItems: "center" }}>
-          <ActivityIndicator size="large" color="#e50914" />
+          <ActivityIndicator size="large" color="#deb522" />
         </Container>
       );
     }
 
+    // Detalhes do filme
     return (
       <ScrollView style={{paddingBottom:10, backgroundColor: "black"}}>
         <Container>

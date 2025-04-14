@@ -8,6 +8,7 @@ import {
 import Icon from "@expo/vector-icons/MaterialIcons";
 import api from "../services/api";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import {
   Container,
   Form,
@@ -20,13 +21,15 @@ import {
   Bio,
 } from "../styles";
 
+// Componente principal da tela "Main"
 export default class Main extends Component {
   state = {
-    newMovie: "",
-    movies: [],
-    loading: false,
+    newMovie: "",     // Armazena o texto de busca
+    movies: [],       // Lista de filmes 
+    loading: false,   // Estado de carregamento da busca
   };
 
+  // Filmes salvos no AsyncStorage
   async componentDidMount() {
     const movies = await AsyncStorage.getItem("movies");
     if (movies) {
@@ -41,16 +44,15 @@ export default class Main extends Component {
     }
   }
 
+  // Adiciona um filme
   handleAddMovie = async () => {
     try {
       const { movies, newMovie } = this.state;
-      if (!newMovie.trim()) return;
+      if (!newMovie.trim()) return; 
       this.setState({ loading: true });
 
       const response = await api.get("/", {
-        params: {
-          t: newMovie,
-        },
+        params: { t: newMovie },
       });
 
       if (response.data.Response === "False") {
@@ -65,6 +67,7 @@ export default class Main extends Component {
         return;
       }
 
+      // Objeto do filme
       const data = {
         title: response.data.Title,
         year: response.data.Year,
@@ -78,7 +81,7 @@ export default class Main extends Component {
         loading: false,
       });
 
-      Keyboard.dismiss();
+      Keyboard.dismiss(); 
     } catch (error) {
       alert("Erro ao buscar o filme.");
       this.setState({ loading: false });
@@ -97,8 +100,10 @@ export default class Main extends Component {
 
   render() {
     const { movies, newMovie, loading } = this.state;
+
     return (
       <Container>
+        {/* Campo de busca */}
         <Form>
           <Input
             autoCorrect={false}
@@ -118,15 +123,17 @@ export default class Main extends Component {
           </SubmitButton>
         </Form>
 
+        {/* Lista de filmes */}
         <List
           data={movies}
           keyExtractor={(movie) => movie.imdbID}
           renderItem={({ item }) => (
-            <FilmesContainer> // ALTERAR AQUI
+            <FilmesContainer> {/* Renderiza cada filme */}
               <Avatar source={{ uri: item.poster }} />
               <Name>{item.title}</Name>
               <Bio>{item.year}</Bio>
 
+              {/* Botão para ver detalhes */}
               <TouchableOpacity
                 style={{
                   backgroundColor: "#deb522",
@@ -142,6 +149,7 @@ export default class Main extends Component {
                 </Text>
               </TouchableOpacity>
 
+              {/* Botão para excluir o filme */}
               <TouchableOpacity
                 style={{
                   backgroundColor: "#444",

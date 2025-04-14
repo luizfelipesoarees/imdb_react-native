@@ -77,7 +77,7 @@ export default function Routes() {
       />
       <Stack.Screen
         name="Filme"
-        component={Filme} // Atualizado aqui
+        component={Filme} 
         options={{
           title: "DETALHES DO FILME",
           headerTitleAlign: "center",

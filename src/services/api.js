@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"; // Faz requisições HTTP
 
 const api = axios.create({
   baseURL: "https://www.omdbapi.com",
