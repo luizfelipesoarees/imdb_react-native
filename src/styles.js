@@ -4,7 +4,7 @@ import { RectButton } from "react-native-gesture-handler";
 export const Container = styled.View`
   flex: 1;
   padding: 30px;
-  background-color: #000; /* fundo preto */
+  background-color: #0c0b00; /* fundo preto */
 `;
 
 export const Form = styled.View`
@@ -29,7 +29,7 @@ export const Input = styled.TextInput.attrs({
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #e50914; /* vermelho Netflix */
+  background: #deb522; 
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 12px;
@@ -55,7 +55,7 @@ export const Avatar = styled.Image`
 
 export const Name = styled.Text`
   font-size: 16px;
-  color: #fff; /* texto branco */
+  color: #fcf7f7; /* texto branco */
   font-weight: bold;
   margin-top: 8px;
   text-align: center;
@@ -78,7 +78,7 @@ export const InfoBox = styled.View`
 
 export const InfoTitle = styled.Text`
   font-size: 14px;
-  color: #e50914;
+  color: #deb522;
   font-weight: bold;
 `;
 
@@ -96,14 +96,13 @@ export const Header = styled.View`
 
 export const Avatarperfil = styled.Image`
   width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  height: 150px;
   background: #eee;
 `;
 
 export const Nameperfil = styled.Text`
   font-size: 16px;
-  color: #333;
+  color: #fcf7f7;
   font-weight: bold;
   margin-top: 10px;
   text-align: center;

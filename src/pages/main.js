@@ -129,7 +129,7 @@ export default class Main extends Component {
 
               <TouchableOpacity
                 style={{
-                  backgroundColor: "#e50914",
+                  backgroundColor: "#deb522",
                   borderRadius: 4,
                   paddingVertical: 6,
                   paddingHorizontal: 12,

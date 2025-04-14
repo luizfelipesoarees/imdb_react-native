@@ -7,7 +7,6 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Alert,
 } from "react-native";
 
 const Login = () => {
@@ -17,34 +16,36 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
-    const user = await AsyncStorage.getItem("user")
-    if(!user){
-      alert("Nenhum usuário cadastrado!")
-      return
+    const user = await AsyncStorage.getItem("user");
+    if (!user) {
+      alert("Nenhum usuário cadastrado!");
+      return;
     }
-    const userJson = JSON.parse(user)
-    if(userJson.email === email && userJson.password === password){
-      navigation.navigate("Main")
-    }else{
-      alert("E-mail ou senha inválidos!")
+    const userJson = JSON.parse(user);
+    if (userJson.email === email && userJson.password === password) {
+      navigation.navigate("Main");
+    } else {
+      alert("E-mail ou senha inválidos!");
     }
   };
 
   const handleCadastro = () => {
-    navigation.navigate("CadastrarUsuario")
-  }
+    navigation.navigate("CadastrarUsuario");
+  };
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder="E-mail"
+        placeholderTextColor="#555"
         value={email}
         onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
         placeholder="Senha"
+        placeholderTextColor="#555"
         secureTextEntry={true}
         value={password}
         onChangeText={setPassword}
@@ -52,7 +53,7 @@ const Login = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.button} onPress={handleCadastro}>
         <Text style={styles.buttonText}>Cadastrar</Text>
       </TouchableOpacity>
@@ -65,18 +66,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#0c0b00", // fundo preto
   },
   input: {
+    backgroundColor: "#fff", // fundo dos campos branco
+    color: "#000", // texto dos campos preto
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#deb522", // borda dourada
     borderRadius: 10,
     padding: 10,
     marginVertical: 10,
     width: "80%",
   },
   button: {
-    backgroundColor: "#7159c1",
+    backgroundColor: "#deb522",
     borderRadius: 10,
     padding: 10,
     width: "80%",
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   buttonText: {
-    color: "#fff",
+    color: "#fcf7f7",
     fontWeight: "bold",
   },
 });

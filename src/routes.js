@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Main from "./pages/main";
 import Login from "./pages/login";
 import CadastrarUsuario from "./pages/cadastro";
-import Filme from "./pages/filme"; // Atualizado aqui
+import Filme from "./pages/filme"; 
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -20,7 +20,7 @@ export default function Routes() {
           headerLeft: null,
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#7159c1",
+            backgroundColor: "#deb522",
           },
           headerTitleStyle: {
             color: "#fff",
@@ -35,10 +35,10 @@ export default function Routes() {
           title: "CADASTRO DE USUÁRIOS",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#7159c1",
+            backgroundColor: "#deb522",
           },
           headerTitleStyle: {
-            color: "#fff",
+            color: "#fcf7f7",
             fontWeight: "bold",
           },
         }}
@@ -48,10 +48,10 @@ export default function Routes() {
         component={Main}
         options={({ navigation }) => ({
           headerLeft: null,
-          title: "OMDb FILMES",
+          title: "IMDB React Native - OMDb FILMES API",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#deb522",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -82,7 +82,7 @@ export default function Routes() {
           title: "DETALHES DO FILME",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#e50914",
+            backgroundColor: "#deb522",
           },
           headerTitleStyle: {
             color: "#fff",
