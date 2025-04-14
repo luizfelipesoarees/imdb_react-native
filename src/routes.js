@@ -16,7 +16,7 @@ export default function Routes() {
         name="Login"
         component={Login}
         options={{
-          title: "LOGIN",
+          title: "LOGIN - IMDB React Native",
           headerLeft: null,
           headerTitleAlign: "center",
           headerStyle: {
@@ -32,7 +32,7 @@ export default function Routes() {
         name="CadastrarUsuario"
         component={CadastrarUsuario}
         options={{
-          title: "CADASTRO DE USUÁRIOS",
+          title: "CADASTRO - IMDB React Native",
           headerTitleAlign: "center",
           headerStyle: {
             backgroundColor: "#deb522",
